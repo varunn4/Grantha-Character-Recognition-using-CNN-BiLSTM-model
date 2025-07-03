@@ -1,0 +1,1 @@
+# Grantha-Character-Recognition-using-CNN-BiLSTM-model
