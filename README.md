@@ -1,7 +1,8 @@
 CHARACTER RECOGNITION IN GRANTHA SCRIPT MANUSCRIPTS USING A HYBRID CNN-BILSTM MODEL
 
 
-This project presents a deep learning-based approach for recognizing characters in Grantha script manuscripts. The proposed model leverages a hybrid CNN-BiLSTM architecture, combining the strengths of convolutional neural networks (CNNs) for feature extraction and bidirectional long short-term memory (BiLSTM) networks for sequential prediction.
+This project presents a deep learning-based approach for recognizing characters in Grantha script manuscripts. The proposed model leverages a hybrid CNN-BiLSTM architecture, combining the strengths of Convolutional Neural Networks (CNNs) for feature extraction and Bidirectional Long Short-Term Memory (BiLSTM) Networks for sequential prediction.
+
 Model Architecture
 - Preprocessing: Input images undergo preprocessing using standard image processing techniques.
 - CNN: A CNN is employed for character recognition, extracting features from the input images.
