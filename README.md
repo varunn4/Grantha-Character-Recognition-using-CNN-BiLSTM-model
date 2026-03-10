@@ -1,8 +1,8 @@
 # Grantha Character Recognition using CNN-BiLSTM
 
-This project presents a deep learning-based approach for recognizing characters from **Grantha script manuscripts** using a hybrid **CNN-BiLSTM architecture**. The model combines Convolutional Neural Networks (CNN) for feature extraction with Bidirectional Long Short-Term Memory (BiLSTM) networks for sequential prediction.
+This project presents a deep learning-based approach for recognizing characters from **Grantha script manuscripts** using a hybrid **CNN-BiLSTM architecture**. The model combines the strengths of **Convolutional Neural Networks (CNN)** for feature extraction and **Bidirectional Long Short-Term Memory (BiLSTM)** networks for sequence prediction.
 
-Grantha is an ancient script historically used in South India to write Sanskrit. Recognizing characters from handwritten manuscripts is challenging due to writing style variations, degradation of manuscripts, and complex character shapes. This project addresses these challenges using deep learning techniques.
+Grantha is an ancient script historically used in South India to write Sanskrit. Recognizing characters from handwritten manuscripts is challenging due to variations in writing styles, degradation of manuscripts, and complex character structures. This project aims to address these challenges using deep learning techniques.
 
 ---
 
@@ -13,71 +13,69 @@ The proposed architecture consists of the following components:
 ## 1. Preprocessing
 Input manuscript images undergo preprocessing including:
 
-- Grayscale conversion  
-- Noise removal  
-- Image normalization  
-- Resizing for model compatibility  
+- Grayscale conversion
+- Noise removal
+- Image normalization
+- Image resizing for model compatibility
 
-## 2. CNN Feature Extractor
-A Convolutional Neural Network extracts spatial features from the manuscript images.
+## 2. CNN Feature Extraction
+A **Convolutional Neural Network (CNN)** extracts spatial features from manuscript images. The CNN learns:
 
-The CNN layers learn:
+- Stroke patterns
+- Character shapes
+- Local structural features
 
-- Stroke patterns  
-- Character shapes  
-- Local visual features  
-
-## 3. BiLSTM Sequence Model
-The extracted features are passed into a **Bidirectional Long Short-Term Memory (BiLSTM)** network to capture contextual dependencies in character sequences.
+## 3. BiLSTM Sequence Modeling
+The extracted features are passed to a **Bidirectional Long Short-Term Memory (BiLSTM)** network that captures contextual dependencies in character sequences.
 
 ## 4. CTC Loss
 The model is trained using **Connectionist Temporal Classification (CTC) Loss**, allowing sequence prediction without explicit character segmentation.
 
 ## 5. Greedy Decoder
-A greedy decoding strategy is used to obtain the most probable character sequence from the model output.
+A greedy decoding strategy is used to obtain the most probable output sequence from the network.
 
 ---
 
 # Dataset
 
-The dataset used in this project consists of Grantha manuscript characters.
+The dataset used for this project contains Grantha manuscript characters.
 
 ## Benchmark Dataset
 Includes:
 
-- Grantha consonants  
-- Grantha numerals  
+- Grantha consonants
+- Grantha numerals
 
 ## Customized Dataset
-A custom dataset was created containing:
+A custom dataset was created to include:
 
-- Vowels  
-- Joint characters  
-- Multiple writing styles  
-- Variations in manuscript quality  
+- Vowels
+- Joint characters
+- Multiple handwriting styles
+- Variations in manuscript quality
 
 Dataset statistics:
 
-- **15,000+ images**
+- **15,000+ character images**
 - **140 Grantha character classes**
 
 ---
 
 # Training and Evaluation
 
-Three sequence models were evaluated:
+Different sequence models were evaluated:
 
-- Simple RNN  
-- LSTM  
+- Simple RNN
+- LSTM
 - **BiLSTM**
 
-The **BiLSTM model achieved the best performance**, showing higher accuracy and lower loss.
+Among these, the **BiLSTM model achieved the best performance**, providing improved accuracy and lower loss.
 
 Training techniques used:
 
-- Early stopping  
-- Batch training  
-- Model checkpointing  
+- Early stopping
+- Batch training
+- Model checkpointing
 
 ---
 
@@ -87,34 +85,33 @@ Training techniques used:
 Grantha-Character-Recognition-using-CNN-BiLSTM-model
 │
 ├── model
-│ └── crnn_model.py
-│
-├── training
-│ └── train.py
-│
-├── inference
-│ └── predict.py
-│
-├── sample_images
+│ ├── seq.ipynb
+│ └── single_pred.ipynb
 │
 ├── grantha_cnn_2.0.ipynb
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
 
 
----
+### File Description
 
-# Pretrained Models
+**grantha_cnn_2.0.ipynb**
 
-Trained models are saved as `.pth` files.
+Main notebook containing:
 
-Available architectures:
+- Data preprocessing
+- CNN-BiLSTM model architecture
+- Training pipeline
+- Model evaluation
 
-- CNN + BiLSTM  
-- CNN + LSTM  
-- CNN + Simple RNN  
+**model/single_pred.ipynb**
 
-Due to GitHub file size limits, pretrained weights are not included in this repository.
+Notebook used for **single character prediction** from Grantha manuscript images.
+
+**model/seq.ipynb**
+
+Notebook used for **sequential character prediction** for recognizing character sequences.
 
 ---
 
@@ -138,53 +135,58 @@ cd Grantha-Character-Recognition-using-CNN-BiLSTM-model
 pip install -r requirements.txt
 
 
-## 4. Run prediction
+## 4. Run the notebooks
 
-Single character prediction:
+Open the notebooks using **Jupyter Notebook or VS Code**.
 
+### Model Training
 
-python inference/predict.py
-
-
-Sequence prediction:
+Run:
 
 
-python training/train.py
+grantha_cnn_2.0.ipynb
+
+
+### Single Character Prediction
+
+Run:
+
+
+model/single_pred.ipynb
+
+
+### Sequential Character Prediction
+
+Run:
+
+
+model/seq.ipynb
 
 
 ---
 
 # Applications
 
-- Digitization of ancient manuscripts  
-- Preservation of historical documents  
-- Automated transcription of Grantha texts  
-- Digital humanities research  
+- Digitization of ancient manuscripts
+- Preservation of historical documents
+- Automated transcription of Grantha texts
+- Digital humanities research
 
 ---
 
 # Technologies Used
 
-- Python  
-- PyTorch  
-- OpenCV  
-- NumPy  
-- Deep Learning (CNN + BiLSTM)  
-- Sequence Modeling  
-
----
-
-# Future Improvements
-
-- Transformer-based OCR models  
-- Larger manuscript datasets  
-- Full manuscript line recognition  
-- Deployment as a web-based OCR tool  
+- Python
+- PyTorch
+- OpenCV
+- NumPy
+- Deep Learning (CNN + BiLSTM)
+- Sequence Modeling
 
 ---
 
 # Author
 
-**Varunn M**
-**Hari Prasath J**  
-Computer Science and Engineering  
+**Varunn M**  
+
+**Hari Prasath J**
